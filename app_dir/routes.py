@@ -6,6 +6,7 @@ from app_dir.forms import LoginForm, RegistrationForm
 from app_dir.models import User, Post
 
 
+
 @app.route('/')
 @app.route('/index')
 @login_required
