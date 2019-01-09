@@ -5,6 +5,8 @@ from datetime import datetime
 from app_dir import app, db
 from app_dir.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm
 from app_dir.models import User, Post
+from flask import g
+from flask_babel import get_locale
 
 
 
@@ -163,3 +165,9 @@ def explore():
         if posts.has_prev else None
     return render_template("index.html", title='Explore', posts=posts.items,
                            next_url=next_url, prev_url=prev_url)
+
+
+@app.before_request
+def before_request():
+    # ...
+    g.locale = str(get_locale())
