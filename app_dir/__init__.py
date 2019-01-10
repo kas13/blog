@@ -19,7 +19,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
-login.login_view = 'login'
+login.login_view = 'auth.login'
 login.login_message = _l('Please log in to access this page.')
 bootstrap = Bootstrap(app)
 moment = Moment(app)
@@ -63,5 +63,8 @@ if not app.debug:
 
 from app_dir.errors import bp as errors_bp
 app.register_blueprint(errors_bp)
+
+from app_dir.auth import bp as auth_bp
+app.register_blueprint(auth_bp, url_prefix='/auth')
 
 from app_dir import routes, models
