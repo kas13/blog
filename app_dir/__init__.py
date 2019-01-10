@@ -9,6 +9,7 @@ from flask_moment import Moment
 from flask_babel import Babel
 from flask_babel import lazy_gettext as _l
 
+
 import logging
 import os
 from logging.handlers import SMTPHandler, RotatingFileHandler
@@ -60,5 +61,7 @@ if not app.debug:
     app.logger.info('Microblog startup')
 
 
+from app_dir.errors import bp as errors_bp
+app.register_blueprint(errors_bp)
 
-from app_dir import routes, models, errors
+from app_dir import routes, models
