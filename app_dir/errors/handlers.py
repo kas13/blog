@@ -1,5 +1,5 @@
-from flask import render_template
-from app_dir import app, db
+from flask import render_template, current_app
+from app_dir import db
 from app_dir.errors import bp
 
 

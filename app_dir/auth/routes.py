@@ -1,8 +1,8 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort, url_for
+from flask import Flask, flash, redirect, render_template, request, session, abort, url_for, current_app
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from datetime import datetime
-from app_dir import app, db
+from app_dir import db
 from app_dir.auth.forms import LoginForm, RegistrationForm
 from app_dir.models import User
 from app_dir.auth import bp
