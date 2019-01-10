@@ -70,4 +70,4 @@ app.register_blueprint(auth_bp, url_prefix='/auth')
 from app_dir.main import bp as main_bp
 app.register_blueprint(main_bp)
 
-from app_dir import routes, models
+from app_dir import models
